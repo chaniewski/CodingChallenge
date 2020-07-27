@@ -15,6 +15,7 @@ export class AppComponent {
   public paymentsenseCodingChallengeApiIsActive = false;
   public paymentsenseCodingChallengeApiActiveIcon = this.faThumbsDown;
   public paymentsenseCodingChallengeApiActiveIconColour = 'red';
+  public searchTerm = '';
 
   constructor(private paymentsenseCodingChallengeApiService: PaymentsenseCodingChallengeApiService) {
     paymentsenseCodingChallengeApiService.getHealth().pipe(take(1))
@@ -33,5 +34,10 @@ export class AppComponent {
         this.paymentsenseCodingChallengeApiActiveIcon = this.faThumbsDown;
         this.paymentsenseCodingChallengeApiActiveIconColour = 'red';
       });
+  }
+
+  searchClick() {
+    this.paymentsenseCodingChallengeApiService.page = 1;
+    this.paymentsenseCodingChallengeApiService.searchTerm = this.searchTerm;
   }
 }

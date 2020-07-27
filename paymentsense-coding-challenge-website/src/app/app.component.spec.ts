@@ -4,13 +4,17 @@ import { AppComponent } from './app.component';
 import { PaymentsenseCodingChallengeApiService } from './services';
 import { MockPaymentsenseCodingChallengeApiService } from './testing/mock-paymentsense-coding-challenge-api.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        NgbModule,
+        FormsModule
       ],
       declarations: [
         AppComponent
